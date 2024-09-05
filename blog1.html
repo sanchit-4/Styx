@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYX - Blog</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background-color: white;
+        }
+        .main-background {
+            background: radial-gradient(circle at center, #2d0a4e, #20022e);
+            height: 50vh;
+            position: relative;
+        }
+        .main-background::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: radial-gradient(circle at center, #2d0a4e, #20022e);
+            border-radius: 0 0 50% 50%;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            font-size: 60px;
+            font-weight: bold;
+            background: linear-gradient(to top, #fae7ff, #eecaf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #a855f7;
+        }
+        .talk-to-us-btn {
+            background-color: #8b5cf6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .talk-to-us-btn:hover {
+            background-color: #7c3aed;
+        }
+        .blog-content {
+            max-width: 800px;
+            margin: -120px auto 0;
+            padding: 30px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        .blog-heading {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d0a4e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .blog-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .blog-description {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        .content-wrapper {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .content-wrapper h1 {
+            font-size: 28px;
+            color: #2d0a4e;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .content-wrapper h2 {
+            font-size: 24px;
+            color: #2d0a4e;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .content-wrapper p {
+            margin-bottom: 20px;
+        }
+        .content-wrapper .bold {
+            font-weight: bold;
+        }
+        .content-wrapper ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .content-wrapper ul li {
+            margin-bottom: 10px;
+        }
+        .highlighted {
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #f4e6ff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #2d0a4e;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-background">
+        <div class="header">
+            <a href="./styx.html" class="logo">STYX</a>
+            <div class="nav">
+                <a href="./blog.html" class="nav-link" style="border-bottom: 2px solid white;">Blogs</a>
+                <a href="https://calendly.com/parth-styx/30min" class="talk-to-us-btn">Talk to us</a>
+            </div>
+        </div>
+    </div>
+    <div class="blog-content">
+        <h2 class="blog-heading">The Future of Web Development</h2>
+        <img src="./image.png" alt="image" class="blog-image">
+        <p class="blog-description">
+            The landscape of web development is rapidly evolving, driven by advancements in technology and changes in user expectations. In this blog post, we'll explore the future trends that are shaping the world of web development and how you can stay ahead of the curve.
+        </p>
+        <div class="content-wrapper">
+            <h1>ISO 42001: A Game-Changer in AI Management</h1>
+            <p>
+                Last December, something big happened in the world of AI.
+            </p>
+            <p>
+                The International Organization for Standardization (ISO) released <span class="highlighted">ISO 42001</span>, and trust me, it's a game-changer.
+            </p>
+            <p>
+                Why am I so excited? Well, as someone who's been in the tech industry for years, I've seen firsthand how AI has evolved from a Sci-fi concept to a crucial business tool.
+            </p>
+            <p>
+                But with great power comes great responsibility, right? That's where ISO 42001 comes in.
+            </p>
+            <p>
+                This new standard isn't just another bureaucratic hoop to jump through. It's the first of its kind - a comprehensive framework for managing AI systems responsibly.
+            </p>
+            <p>
+                Think of it as a roadmap for organizations navigating the complex terrain of AI implementation.
+            </p>
+
+            <h2>Why ISO 42001 Matters</h2>
+            <ul>
+                <li><span class="bold">AI Certification:</span> As the inaugural standard for AI management, ISO 42001 sets the benchmark for excellence in the AI domain.</li>
+                <li><span class="bold">Comprehensive Framework:</span> Building on the foundation of ISO 27001 (Information management), ISO 42001 provides a robust structure for managing AI systems responsibly.</li>
+                <li><span class="bold">Transparency and Fairness:</span> The standard emphasizes requirements for transparency, fairness, and risk identification – crucial aspects in the ethical deployment of AI.</li>
+                <li><span class="bold">Flexible Application:</span> Whether you're Creating AI or Integrating AI products into your organization, ISO 42001 offers adaptable guidelines.</li>
+            </ul>
+
+            <p>
+                Of course, ISO 42001 isn't the only framework out there. But what sets it apart is its integrated approach. It's not just about ticking boxes; it's about embedding responsible AI practices into the very fabric of your organization.
+            </p>
+
+            <h2>ISO 42001 in the ISO AI Family</h2>
+            <p>
+                ISO 42001 doesn't stand alone. It's part of a growing family of AI-related standards:
+            </p>
+            <ul>
+                <li>ISO 22989: Lays the groundwork with AI terminology and concepts.</li>
+                <li>ISO 23053: Establishes foundational AI and machine learning practices.</li>
+                <li>ISO 23894: Provides guidance on AI model deployment and production.</li>
+                <li>ISO 27090: (Under Development) Will address Cybersecurity in AI systems.</li>
+            </ul>
+
+            <h2>Standing Out from the Crowd</h2>
+            <p>
+                While other AI regulatory frameworks exist, ISO 42001 distinguishes itself by:
+            </p>
+            <ul>
+                <li>Offering an integrated approach for organizations developing, providing, or using AI applications.</li>
+                <li>Focusing on risk assessment, continual improvement, and leadership commitment.</li>
+                <li>Providing a comprehensive scope covering operational planning, performance evaluation, and support.</li>
+            </ul>
+
+            <p>
+                One thing I particularly appreciate about ISO 42001 is how it builds trust. In my experience, when stakeholders - be it investors, employees, or customers - see that you're following recognized standards, it gives them confidence in your approach.
+            </p>
+
+            <h2>Looking Ahead</h2>
+            <p>
+                Right now, adopting ISO 42001 is voluntary. But mark my words, it's going to become increasingly important.
+            </p>
+            <p>
+                As AI continues to shape our world, those who can demonstrate Responsible AI management will have a Significant Edge.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

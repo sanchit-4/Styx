@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYX - Blog</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+        }
+        .main-background {
+            background: radial-gradient(circle at center, #2d0a4e, #20022e);
+            padding-bottom: 100px;
+            position: relative;
+        }
+        .main-background::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+        }
+        .logo {
+            font-size: 60px;
+            font-weight: bold;
+            background: linear-gradient(to top, #fae7ff, #eecaf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #a855f7;
+        }
+        .talk-to-us-btn {
+            background-color: #8b5cf6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .talk-to-us-btn:hover {
+            background-color: #7c3aed;
+        }
+        .content {
+            text-align: center;
+            padding: 60px 30px;
+        }
+        .blog-banner {
+            background-color: white;
+            color: #2d0a4e;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .main-heading {
+            font-size: 58px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 22px;
+            color: #cccccc;
+            margin-bottom: 40px;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            border: none;
+            font-size: 16px;
+        }
+        .blog-section {
+            background-color: white;
+            padding: 50px 0;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 20px;
+            color: #333;
+            text-align: left;
+        }
+        .blog-category {
+            color: #7c3aed;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .blog-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2d0a4e;
+        }
+        .blog-excerpt {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .blog-author {
+            display: flex;
+            align-items: center;
+        }
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .author-name {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-background">
+        <div class="header">
+            <a href="./styx.html" class="logo">STYX</a>
+            <div class="nav">
+                <a href="./blog.html" class="nav-link" style="border-bottom: 2px solid white;">Blogs</a>
+                <a href="https://calendly.com/parth-styx/30min" class="talk-to-us-btn">Talk to us</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="blog-banner">Our Blog</div>
+            <h1 class="main-heading">Resources and Insights</h1>
+            <p class="subtitle">The latest industry news, interviews, technologies, and resources.</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <div class="blog-section">
+        <div class="blog-grid">
+            <div class="blog-card">
+                <a href="./blog1.html" class="blog-card-link">
+                    <img src="./image.png" alt="UX review presentation" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Compliance</div>
+                        <h2 class="blog-title">ISO 42001: A Game-Changer in AI Management</h2>
+                        <p class="blog-excerpt">The International Organization for Standardization (ISO) released ISO 42001, and trust me, it's a game-changer.</p>
+                        <div class="blog-author">
+                            <span class="author-name">Parth Gupta</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
