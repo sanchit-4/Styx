@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STYX - Blog</title>
+    <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
         body, html {
             margin: 0;
@@ -12,11 +13,14 @@
             color: white;
             min-height: 100vh;
             background-color: white;
+            display: flex;
+            flex-direction: column;
         }
         .main-background {
             background: radial-gradient(circle at center, #2d0a4e, #20022e);
-            height: 50vh;
+            min-height: 50vh;
             position: relative;
+            padding-bottom: 50px;
         }
         .main-background::after {
             content: "";
@@ -80,6 +84,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 2;
+            flex-grow: 1;
         }
         .blog-heading {
             font-size: 32px;
@@ -140,6 +145,67 @@
             color: #2d0a4e;
             display: inline-block;
         }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgba(120, 58, 237, 0.2);
+            z-index: 2;
+            font-size: 14px;
+            color: #333;
+        }
+        .copyright {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .linkedin {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .linkedin:hover {
+            color: #7c3aed;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .logo {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .blog-content {
+                margin-top: -80px;
+                padding: 20px;
+            }
+            .blog-heading {
+                font-size: 24px;
+            }
+            .content-wrapper h1 {
+                font-size: 22px;
+            }
+            .content-wrapper h2 {
+                font-size: 20px;
+            }
+            .content-wrapper {
+                font-size: 16px;
+            }
+            .highlighted {
+                font-size: 18px;
+            }
+            .footer {
+                flex-direction: column;
+                padding: 10px 20px;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -153,7 +219,7 @@
         </div>
     </div>
     <div class="blog-content">
-        <h2 class="blog-heading">The Future of Web Development</h2>
+        <h2 class="blog-heading">AI Framework Analysis</h2>
         <img src="./image.png" alt="image" class="blog-image">
         <p class="blog-description">
             The landscape of web development is rapidly evolving, driven by advancements in technology and changes in user expectations. In this blog post, we'll explore the future trends that are shaping the world of web development and how you can stay ahead of the curve.
@@ -224,6 +290,10 @@
                 As AI continues to shape our world, those who can demonstrate Responsible AI management will have a Significant Edge.
             </p>
         </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
+        <a href="https://www.linkedin.com/company/getstyx/" class="linkedin">LinkedIn</a>
     </div>
 </body>
 </html>
