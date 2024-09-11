@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styx AI Landing Page</title>
+    <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
         body {
             margin: 0;
@@ -13,13 +14,14 @@
             color: white;
             min-height: 100vh;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Adding the side tube effect on both sides */
         body::before, body::after {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             bottom: 0;
             width: 7px;
@@ -35,7 +37,6 @@
             right: 0;
         }
 
-        /* Flashy animation */
         @keyframes flash {
             0% {
                 opacity: 0.8;
@@ -93,6 +94,7 @@
             padding: 60px 30px;
             z-index: 2;
             position: relative;
+            flex-grow: 1;
         }
         .main-heading {
             font-size: 58px;
@@ -149,6 +151,84 @@
             margin-left: 10px;
             font-size: 18px;
         }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgba(120, 58, 237, 0.2);
+            z-index: 2;
+            font-size: 14px;
+        }
+        .copyright {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .linkedin {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .linkedin:hover {
+            color: #a855f7;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .content {
+                padding: 40px 20px;
+            }
+            .main-heading {
+                font-size: 36px;
+            }
+            .subtitle {
+                font-size: 32px;
+                flex-direction: column;
+            }
+            .static-text {
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
+            .animated-container {
+                width: 100%;
+                height: 1.5em;
+            }
+            .purple-text {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 40px;
+                margin-top: 20px;
+            }
+            .demo-btn {
+                display: block;
+                margin-bottom: 20px;
+            }
+            .get-started {
+                margin-left: 0;
+                display: block;
+            }
+            .footer {
+                padding: 10px 20px;
+                flex-direction: column-reverse;
+                gap: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -168,8 +248,12 @@
             </div>
         </div>
         <p>Ensure trust on your Gen AI Application with the expertise of Styx</p>
-        <a href="https://calendly.com/parth-styx/30min  " class="demo-btn">Talk to us</a>
+        <a href="https://calendly.com/parth-styx/30min" class="demo-btn">Talk to us</a>
         <span class="get-started">to get started</span>
+    </div>
+    <div class="footer">
+        <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
+        <a href="https://www.linkedin.com/company/getstyx" class="linkedin">LinkedIn</a>
     </div>
     <script>
         const phrases = [
