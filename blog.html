@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STYX - Blog</title>
+    <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
         body, html {
             margin: 0;
@@ -11,6 +12,8 @@
             font-family: Arial, sans-serif;
             color: white;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .main-background {
             background: radial-gradient(circle at center, #2d0a4e, #20022e);
@@ -92,6 +95,9 @@
         .search-container {
             max-width: 600px;
             margin: 0 auto 60px;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         .search-input {
             width: 100%;
@@ -99,10 +105,12 @@
             border-radius: 25px;
             border: none;
             font-size: 16px;
+            box-sizing: border-box;
         }
         .blog-section {
             background-color: white;
             padding: 50px 0;
+            flex-grow: 1;
         }
         .blog-grid {
             display: grid;
@@ -158,6 +166,63 @@
             font-size: 14px;
             color: #333;
         }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgba(120, 58, 237, 0.2);
+            z-index: 2;
+            font-size: 14px;
+            color: #333;
+        }
+        .copyright {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .linkedin {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .linkedin:hover {
+            color: #7c3aed;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .logo {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .content {
+                padding: 40px 20px;
+            }
+            .main-heading {
+                font-size: 36px;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer {
+                flex-direction: column-reverse;
+                padding: 10px 20px;
+                gap: 5px;
+            }
+            .search-container {
+                padding: 0 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -194,6 +259,10 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
+        <a href="https://www.linkedin.com/company/getstyx" class="linkedin">LinkedIn</a>
     </div>
 </body>
 </html>
