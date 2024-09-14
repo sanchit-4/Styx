@@ -6,9 +6,12 @@
     <title>STYX - Blog</title>
     <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
             font-family: Arial, sans-serif;
             color: white;
             min-height: 100vh;
@@ -36,27 +39,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 50px;
+            padding: 10px;
             position: relative;
             z-index: 2;
         }
         .logo {
-            font-size: 60px;
+            font-size: 36px;
             font-weight: bold;
             background: linear-gradient(to top, #fae7ff, #eecaf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
         .nav {
             display: flex;
-            gap: 35px;
+            gap: 10px;
             align-items: center;
         }
         .nav-link {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 14px;
             transition: color 0.3s ease;
         }
         .nav-link:hover {
@@ -65,10 +69,11 @@
         .talk-to-us-btn {
             background-color: #8b5cf6;
             color: white;
-            padding: 10px 20px;
+            padding: 5px 10px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 14px;
             transition: background-color 0.3s ease;
         }
         .talk-to-us-btn:hover {
@@ -76,8 +81,8 @@
         }
         .blog-content {
             max-width: 800px;
-            margin: -120px auto 0;
-            padding: 30px;
+            margin: -80px auto 0;
+            padding: 20px;
             background-color: #fff;
             color: #333;
             border-radius: 10px;
@@ -87,7 +92,7 @@
             flex-grow: 1;
         }
         .blog-heading {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: bold;
             color: #2d0a4e;
             margin-bottom: 20px;
@@ -100,24 +105,24 @@
             margin-bottom: 20px;
         }
         .blog-description {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             text-align: justify;
             margin-bottom: 30px;
         }
         .content-wrapper {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             color: #333;
         }
         .content-wrapper h1 {
-            font-size: 28px;
+            font-size: 22px;
             color: #2d0a4e;
             margin-bottom: 20px;
             font-weight: bold;
         }
         .content-wrapper h2 {
-            font-size: 24px;
+            font-size: 20px;
             color: #2d0a4e;
             margin-bottom: 15px;
             font-weight: bold;
@@ -137,7 +142,7 @@
             margin-bottom: 10px;
         }
         .highlighted {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             background-color: #f4e6ff;
             padding: 5px 10px;
@@ -149,61 +154,63 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 10px;
             background-color: rgba(120, 58, 237, 0.2);
             z-index: 2;
-            font-size: 14px;
-            color: #333;
+            font-size: 12px;
+            color: #000000;
         }
         .copyright {
             flex-grow: 1;
             text-align: center;
         }
         .linkedin {
-            color: #333;
+            color: #000000;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .linkedin:hover {
-            color: #7c3aed;
+            color: #000000;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .header {
-                flex-direction: column;
-                padding: 20px;
+                padding: 30px 50px;
             }
             .logo {
-                font-size: 40px;
-                margin-bottom: 20px;
+                font-size: 60px;
             }
             .nav {
-                flex-direction: column;
-                gap: 20px;
+                gap: 35px;
             }
-            .blog-content {
-                margin-top: -80px;
-                padding: 20px;
-            }
-            .blog-heading {
-                font-size: 24px;
-            }
-            .content-wrapper h1 {
-                font-size: 22px;
-            }
-            .content-wrapper h2 {
+            .nav-link, .talk-to-us-btn {
                 font-size: 20px;
             }
-            .content-wrapper {
-                font-size: 16px;
+            .blog-content {
+                margin-top: -120px;
+                padding: 30px;
             }
-            .highlighted {
+            .blog-heading {
+                font-size: 32px;
+            }
+            .blog-description {
                 font-size: 18px;
             }
+            .content-wrapper {
+                font-size: 18px;
+            }
+            .content-wrapper h1 {
+                font-size: 28px;
+            }
+            .content-wrapper h2 {
+                font-size: 24px;
+            }
+            .highlighted {
+                font-size: 20px;
+            }
             .footer {
-                flex-direction: column;
-                padding: 10px 20px;
-                gap: 10px;
+                padding: 15px 50px;
+                font-size: 14px;
             }
         }
     </style>
