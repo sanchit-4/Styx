@@ -6,227 +6,189 @@
     <title>STYX - Blog</title>
     <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
             font-family: Arial, sans-serif;
             color: white;
-            min-height: 100vh;
+            height: 100%;
+            overflow: hidden;
+        }
+        .container {
             display: flex;
             flex-direction: column;
-        }
-        .main-background {
+            height: 100%;
             background: radial-gradient(circle at center, #2d0a4e, #20022e);
-            padding-bottom: 100px;
-            position: relative;
-        }
-        .main-background::after {
-            content: "";
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: white;
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 50px;
+            padding: 10px;
         }
         .logo {
-            font-size: 60px;
+            font-size: 36px;
             font-weight: bold;
             background: linear-gradient(to top, #fae7ff, #eecaf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
         .nav {
             display: flex;
-            gap: 35px;
+            gap: 10px;
             align-items: center;
         }
         .nav-link {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #a855f7;
+            font-size: 14px;
         }
         .talk-to-us-btn {
             background-color: #8b5cf6;
             color: white;
-            padding: 10px 20px;
+            padding: 5px 10px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .talk-to-us-btn:hover {
-            background-color: #7c3aed;
+            font-size: 14px;
         }
         .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 60px 30px;
+            padding: 10px;
         }
         .blog-banner {
             background-color: white;
             color: #2d0a4e;
             display: inline-block;
-            padding: 5px 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
+            padding: 3px 10px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-size: 12px;
         }
         .main-heading {
-            font-size: 58px;
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .subtitle {
-            font-size: 22px;
+            font-size: 14px;
             color: #cccccc;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         .search-container {
-            max-width: 600px;
-            margin: 0 auto 60px;
             width: 100%;
-            padding: 0 20px;
-            box-sizing: border-box;
+            margin-bottom: 20px;
         }
         .search-input {
             width: 100%;
-            padding: 15px;
-            border-radius: 25px;
+            padding: 10px;
+            border-radius: 20px;
             border: none;
-            font-size: 16px;
-            box-sizing: border-box;
+            font-size: 14px;
         }
         .blog-section {
             background-color: white;
-            padding: 50px 0;
+            padding: 20px 10px;
+            overflow-y: auto;
             flex-grow: 1;
         }
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
         .blog-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .blog-image {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
         }
         .blog-content {
-            padding: 20px;
+            padding: 15px;
             color: #333;
             text-align: left;
         }
         .blog-category {
             color: #7c3aed;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            font-size: 12px;
         }
         .blog-title {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #2d0a4e;
         }
         .blog-excerpt {
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .blog-author {
             display: flex;
             align-items: center;
         }
-        .author-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
         .author-name {
-            font-size: 14px;
+            font-size: 12px;
             color: #333;
         }
         .footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 10px;
             background-color: rgba(120, 58, 237, 0.2);
-            z-index: 2;
-            font-size: 14px;
-            color: #333;
+            font-size: 12px;
+            color: #ffffff;
         }
         .copyright {
             flex-grow: 1;
             text-align: center;
         }
         .linkedin {
-            color: #333;
+            color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-        .linkedin:hover {
-            color: #7c3aed;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .logo {
-                font-size: 40px;
-                margin-bottom: 20px;
-            }
-            .nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .content {
-                padding: 40px 20px;
-            }
-            .main-heading {
-                font-size: 36px;
-            }
-            .subtitle {
-                font-size: 18px;
-            }
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer {
-                flex-direction: column-reverse;
-                padding: 10px 20px;
-                gap: 5px;
-            }
-            .search-container {
-                padding: 0 15px;
-            }
+        
+        @media (min-width: 768px) {
+            .header { padding: 20px 50px; }
+            .logo { font-size: 60px; }
+            .nav { gap: 35px; }
+            .nav-link, .talk-to-us-btn { font-size: 20px; }
+            .content { padding: 60px 30px; }
+            .blog-banner { font-size: 16px; padding: 5px 20px; }
+            .main-heading { font-size: 58px; }
+            .subtitle { font-size: 22px; }
+            .search-input { font-size: 16px; padding: 15px; }
+            .blog-grid { grid-template-columns: repeat(3, 1fr); }
+            .blog-image { height: 200px; }
+            .blog-content { padding: 20px; }
+            .blog-category { font-size: 14px; }
+            .blog-title { font-size: 20px; }
+            .blog-excerpt { font-size: 14px; }
+            .author-name { font-size: 14px; }
+            .footer { padding: 15px 50px; font-size: 14px; }
         }
     </style>
 </head>
 <body>
-    <div class="main-background">
+    <div class="container">
         <div class="header">
             <a href="./index.html" class="logo">STYX</a>
             <div class="nav">
@@ -242,27 +204,27 @@
                 <input type="text" class="search-input" placeholder="Search">
             </div>
         </div>
-    </div>
-    <div class="blog-section">
-        <div class="blog-grid">
-            <div class="blog-card">
-                <a href="./blog1.html" class="blog-card-link">
-                    <img src="./image.png" alt="UX review presentation" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Compliance</div>
-                        <h2 class="blog-title">ISO 42001: A Game-Changer in AI Management</h2>
-                        <p class="blog-excerpt">The International Organization for Standardization (ISO) released ISO 42001, and trust me, it's a game-changer.</p>
-                        <div class="blog-author">
-                            <span class="author-name">Parth Gupta</span>
+        <div class="blog-section">
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <a href="./blog1.html" class="blog-card-link">
+                        <img src="./image.png" alt="UX review presentation" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-category">Compliance</div>
+                            <h2 class="blog-title">ISO 42001: A Game-Changer in AI Management</h2>
+                            <p class="blog-excerpt">The International Organization for Standardization (ISO) released ISO 42001, and trust me, it's a game-changer.</p>
+                            <div class="blog-author">
+                                <span class="author-name">Parth Gupta</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
-        <a href="https://www.linkedin.com/company/getstyx" class="linkedin">LinkedIn</a>
+        <div class="footer">
+            <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
+            <a href="https://www.linkedin.com/company/getstyx" class="linkedin">LinkedIn</a>
+        </div>
     </div>
 </body>
 </html>
