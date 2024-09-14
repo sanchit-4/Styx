@@ -3,162 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styx AI</title>
+    <title>Styx AI Landing Page</title>
     <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             font-family: Arial, sans-serif;
             background: radial-gradient(circle at center, #2d0a4e, #20022e);
             color: white;
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
-
-        body::before, body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 7px;
-            background: linear-gradient(to bottom, #a855f7, rgba(255,182,193, 0.4));
-            box-shadow: 0 0 20px 5px #a855f7;
-            z-index: 1;
-            animation: flash 2s infinite alternate;
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 10px;
         }
-        body::before {
-            left: 0;
-        }
-        body::after {
-            right: 0;
-        }
-
-        @keyframes flash {
-            0% {
-                opacity: 0.8;
-            }
-            100% {
-                opacity: 1;
-                box-shadow: 0 0 30px 10px #a855f7;
-            }
-        }
-
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 50px;
-            z-index: 2;
-            position: relative;
+            padding: 10px 0;
         }
         .logo {
-            font-size: 60px;
+            font-size: 36px;
             font-weight: bold;
             background: linear-gradient(to top, #fae7ff, #eecaf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
         .nav {
             display: flex;
-            gap: 35px;
+            gap: 10px;
             align-items: center;
         }
         .blog-link {    
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-        .blog-link:hover {
-            color: #a855f7;
+            font-size: 14px;
         }
         .login-btn {
+            background-color: #7c3aed;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .main-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .animated-container {
+            position: relative;
+            height: 1.2em;
+            margin-top: 5px;
+            width: 100%;
+        }
+        .purple-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            color: #a855f7;
+            white-space: nowrap;
+            transition: opacity 0.5s ease-in-out;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+        .demo-btn {
             background-color: #7c3aed;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .login-btn:hover {
-            background-color: #8b5cf6;
-        }
-        .content {
-            text-align: center;
-            padding: 60px 30px;
-            z-index: 2;
-            position: relative;
-            flex-grow: 1;
-        }
-        .main-heading {
-            font-size: 58px;
-            font-weight: bold;
+            font-size: 14px;
             margin-bottom: 10px;
         }
-        .subtitle {
-            font-size: 58px;
-            font-weight: bold;
-            margin-top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .static-text {
-            color: white;
-            padding-right: 10px;
-        }
-        .animated-container {
-            position: relative;
-            width: 400px;
-            height: 1.2em;
-            display: inline-block;
-            vertical-align: bottom;
-        }
-        .purple-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #a855f7;
-            transition: opacity 0.5s ease-in-out;
-            white-space: nowrap;
-        }
-        p {
-            font-size: 22px;
-            margin-bottom: 80px;
-            margin-top: 40px;
-            color: #cccccc;
-        }
-        .demo-btn {
-            background-color: #7c3aed;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-        .demo-btn:hover {
-            background-color: #2563eb;
-        }
         .get-started {
-            margin-left: 10px;
-            font-size: 18px;
+            font-size: 14px;
         }
         .footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 10px 0;
             background-color: rgba(120, 58, 237, 0.2);
-            z-index: 2;
-            font-size: 14px;
+            font-size: 12px;
         }
         .copyright {
             flex-grow: 1;
@@ -167,93 +128,47 @@
         .linkedin {
             color: white;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-        .linkedin:hover {
-            color: #a855f7;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 20px;
-                flex-direction: column;
-                align-items: center;
-            }
-            .logo {
-                font-size: 40px;
-                margin-bottom: 20px;
-            }
-            .nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .content {
-                padding: 40px 20px;
-            }
-            .main-heading {
-                font-size: 36px;
-            }
-            .subtitle {
-                font-size: 32px;
-                flex-direction: column;
-            }
-            .static-text {
-                padding-right: 0;
-                margin-bottom: 10px;
-            }
-            .animated-container {
-                width: 100%;
-                height: 1.5em;
-            }
-            .purple-text {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-            }
-            p {
-                font-size: 18px;
-                margin-bottom: 40px;
-                margin-top: 20px;
-            }
-            .demo-btn {
-                display: block;
-                margin-bottom: 20px;
-            }
-            .get-started {
-                margin-left: 0;
-                display: block;
-            }
-            .footer {
-                padding: 10px 20px;
-                flex-direction: column-reverse;
-                gap: 5px;
-            }
+        
+        @media (min-width: 768px) {
+            .container { padding: 20px; }
+            .logo { font-size: 60px; }
+            .nav { gap: 20px; }
+            .blog-link, .login-btn { font-size: 18px; }
+            .main-heading { font-size: 48px; }
+            .subtitle { font-size: 36px; }
+            p { font-size: 18px; }
+            .demo-btn { font-size: 18px; }
+            .get-started { font-size: 18px; }
+            .footer { font-size: 14px; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <a href="./index.html" class="logo">STYX</a>
-        <div class="nav">
-            <a href="./blog.html" class="blog-link">Blogs</a>
-            <a href="https://calendly.com/parth-styx/30min" class="login-btn">Talk to us</a>
-        </div>
-    </div>
-    <div class="content">
-        <h1 class="main-heading">Responsible AI Governance made simple</h1>
-        <div class="subtitle">
-            <span class="static-text">Comply With</span>
-            <div class="animated-container">
-                <span id="animated-text" class="purple-text">ISO 42001</span>
+    <div class="container">
+        <div class="header">
+            <a href="./index.html" class="logo">STYX</a>
+            <div class="nav">
+                <a href="./blog.html" class="blog-link">Blogs</a>
+                <a href="https://calendly.com/parth-styx/30min" class="login-btn">Talk to us</a>
             </div>
         </div>
-        <p>Ensure trust on your Gen AI Application with the expertise of Styx</p>
-        <a href="https://calendly.com/parth-styx/30min" class="demo-btn">Talk to us</a>
-        <span class="get-started">to get started</span>
-    </div>
-    <div class="footer">
-        <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
-        <a href="https://www.linkedin.com/company/getstyx" class="linkedin">LinkedIn</a>
+        <div class="content">
+            <h1 class="main-heading">Responsible AI Governance made simple</h1>
+            <div class="subtitle">
+                <span>Comply With</span>
+                <div class="animated-container">
+                    <span id="animated-text" class="purple-text">ISO 42001</span>
+                </div>
+            </div>
+            <p>Ensure trust on your Gen AI Application with the expertise of Styx</p>
+            <a href="https://calendly.com/parth-styx/30min" class="demo-btn">Talk to us</a>
+            <span class="get-started">to get started</span>
+        </div>
+        <div class="footer">
+            <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
+            <a href="https://www.linkedin.com/company/getstyx" class="linkedin">LinkedIn</a>
+        </div>
     </div>
     <script>
         const phrases = [
