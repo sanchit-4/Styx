@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styx AI Landing Page</title>
+    <title>Styx AI</title>
     <link rel="icon" href="styx.jpg" type="image/x-icon">
     <style>
         * {
@@ -78,27 +78,36 @@
             font-weight: bold;
             margin-bottom: 10px;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            flex-wrap: nowrap;
+        }
+        .comply-with {
+            margin-right: 5px;
+            white-space: nowrap;
         }
         .animated-container {
-            position: relative;
-            height: 1.2em;
-            margin-top: 5px;
-            width: 100%;
+            width: 180px;
+            text-align: left;
+            overflow: hidden;
         }
         .purple-text {
-            position: absolute;
-            left: 0;
-            right: 0;
             color: #a855f7;
             white-space: nowrap;
+            display: inline-block;
             transition: opacity 0.5s ease-in-out;
         }
         p {
             font-size: 14px;
             margin-bottom: 20px;
             color: #cccccc;
+        }
+        .cta-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
         .demo-btn {
             background-color: #7c3aed;
@@ -108,7 +117,6 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
-            margin-bottom: 10px;
         }
         .get-started {
             font-size: 14px;
@@ -137,6 +145,7 @@
             .blog-link, .login-btn { font-size: 18px; }
             .main-heading { font-size: 48px; }
             .subtitle { font-size: 36px; }
+            .animated-container { width: 340px; }
             p { font-size: 18px; }
             .demo-btn { font-size: 18px; }
             .get-started { font-size: 18px; }
@@ -156,14 +165,14 @@
         <div class="content">
             <h1 class="main-heading">Responsible AI Governance made simple</h1>
             <div class="subtitle">
-                <span>Comply With</span>
-                <div class="animated-container">
-                    <span id="animated-text" class="purple-text">ISO 42001</span>
-                </div>
+                <span class="comply-with">Comply With</span>
+                <div class="animated-container"><span id="animated-text" class="purple-text">ISO 42001</span></div>
             </div>
             <p>Ensure trust on your Gen AI Application with the expertise of Styx</p>
-            <a href="https://calendly.com/parth-styx/30min" class="demo-btn">Talk to us</a>
-            <span class="get-started">to get started</span>
+            <div class="cta-container">
+                <a href="https://calendly.com/parth-styx/30min" class="demo-btn">Talk to us</a>
+                <span class="get-started">to get started</span>
+            </div>
         </div>
         <div class="footer">
             <div class="copyright">© 2024 Styx AI. All rights reserved.</div>
